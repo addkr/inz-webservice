@@ -1,0 +1,178 @@
+﻿@model WebService.Models.patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.secondname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.secondname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.familyname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.familyname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.citizenship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.citizenship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateofbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateofbirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insuranceno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insuranceno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.housenumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.housenumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.local)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.local)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datecreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datecreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accessType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accessType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

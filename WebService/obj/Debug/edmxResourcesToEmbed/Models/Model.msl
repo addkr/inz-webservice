@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="healthCenterDBModelStoreContainer" CdmEntityContainer="healthCenterDBEntities2">
+    <EntitySetMapping Name="appointment">
+      <EntityTypeMapping TypeName="healthCenterDBModel.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="patientUserName" ColumnName="patientUserName" />
+          <ScalarProperty Name="doctorUserName" ColumnName="doctorUserName" />
+          <ScalarProperty Name="documentId" ColumnName="documentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="patient">
+      <EntityTypeMapping TypeName="healthCenterDBModel.patient">
+        <MappingFragment StoreEntitySet="patient">
+          <ScalarProperty Name="forename" ColumnName="forename" />
+          <ScalarProperty Name="secondname" ColumnName="secondname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="familyname" ColumnName="familyname" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="citizenship" ColumnName="citizenship" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="pesel" ColumnName="pesel" />
+          <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+          <ScalarProperty Name="insuranceno" ColumnName="insuranceno" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="housenumber" ColumnName="housenumber" />
+          <ScalarProperty Name="local" ColumnName="local" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="accessType" ColumnName="accessType" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
