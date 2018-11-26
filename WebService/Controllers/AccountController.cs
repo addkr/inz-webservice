@@ -51,45 +51,7 @@ namespace WebService.Controllers
             return model;
         }
 
-        [Route("api/CheckUserData")]
-        [HttpPost]        
-        [AllowAnonymous]
-        public String CheckUserData(UserName username)
-        {
-            try
-            {
-                
-                string cs = ConfigurationManager.ConnectionStrings["healthCenterDBConnection"].ConnectionString;
-                SqlConnection conn = new SqlConnection(cs);
-                conn.Open();
-                string result = "";
-                SqlCommand command = new SqlCommand("Select * from [dbo].[patient] where [forename]=@name", conn);
-                command.Parameters.AddWithValue("@name", username.userName);
-                patient patient = new patient();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        UserAccessData userAccessData = new UserAccessData();
-                        userAccessData.lastname = reader.GetString(2);
-                        userAccessData.forename = reader.GetString(0);
-                        userAccessData.email = reader.GetString(10);
-                        //userAccessData.userName = reader.GetString(18);
-                        //userAccessData.accessType = reader.GetString(19);
-                        conn.Close();
-                        result =  JsonConvert.SerializeObject(userAccessData);
-                        
-                    }
-
-                }
-                return result;
-
-            }
-            catch(Exception ex)
-            {
-                return ex.Message.ToString();
-            }
-        }
+       
 
 
     }

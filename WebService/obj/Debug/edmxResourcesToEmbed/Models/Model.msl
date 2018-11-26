@@ -1,15 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="healthCenterDBModelStoreContainer" CdmEntityContainer="healthCenterDBEntities2">
+  <EntityContainerMapping StorageEntityContainer="healthCenterDBModelStoreContainer" CdmEntityContainer="healthCenterDBEntities1">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="healthCenterDBModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
+          <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="appointment">
       <EntityTypeMapping TypeName="healthCenterDBModel.appointment">
         <MappingFragment StoreEntitySet="appointment">
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="patientUserName" ColumnName="patientUserName" />
-          <ScalarProperty Name="doctorUserName" ColumnName="doctorUserName" />
-          <ScalarProperty Name="documentId" ColumnName="documentId" />
+          <ScalarProperty Name="patientusername" ColumnName="patientusername" />
+          <ScalarProperty Name="medicusername" ColumnName="medicusername" />
+          <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doctor">
+      <EntityTypeMapping TypeName="healthCenterDBModel.doctor">
+        <MappingFragment StoreEntitySet="doctor">
+          <ScalarProperty Name="forename" ColumnName="forename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="speciality" ColumnName="speciality" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nurse">
+      <EntityTypeMapping TypeName="healthCenterDBModel.nurse">
+        <MappingFragment StoreEntitySet="nurse">
+          <ScalarProperty Name="forename" ColumnName="forename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="speciality" ColumnName="speciality" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="email" ColumnName="email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -34,9 +74,30 @@
           <ScalarProperty Name="city" ColumnName="city" />
           <ScalarProperty Name="country" ColumnName="country" />
           <ScalarProperty Name="datecreated" ColumnName="datecreated" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
-          <ScalarProperty Name="accessType" ColumnName="accessType" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
           <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reception">
+      <EntityTypeMapping TypeName="healthCenterDBModel.reception">
+        <MappingFragment StoreEntitySet="reception">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="forename" ColumnName="forename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specialities">
+      <EntityTypeMapping TypeName="healthCenterDBModel.specialities">
+        <MappingFragment StoreEntitySet="specialities">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

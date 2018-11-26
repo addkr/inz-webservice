@@ -1,0 +1,74 @@
+﻿@model WebService.Models.nurse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>nurse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.speciality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.speciality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accesstype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accesstype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -13,10 +13,10 @@ namespace WebService.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class healthCenterDBEntities2 : DbContext
+    public partial class healthCenterDBEntities1 : DbContext
     {
-        public healthCenterDBEntities2()
-            : base("name=healthCenterDBEntities2")
+        public healthCenterDBEntities1()
+            : base("name=healthCenterDBEntities1")
         {
         }
     
@@ -25,7 +25,12 @@ namespace WebService.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<admin> admin { get; set; }
         public virtual DbSet<appointment> appointment { get; set; }
+        public virtual DbSet<doctor> doctor { get; set; }
+        public virtual DbSet<nurse> nurse { get; set; }
         public virtual DbSet<patient> patient { get; set; }
+        public virtual DbSet<reception> reception { get; set; }
+        public virtual DbSet<specialities> specialities { get; set; }
     }
 }

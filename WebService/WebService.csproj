@@ -239,8 +239,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActionsController.cs" />
+    <Compile Include="Controllers\adminsController.cs" />
+    <Compile Include="Controllers\appointmentsController.cs" />
+    <Compile Include="Controllers\doctorsController.cs" />
+    <Compile Include="Controllers\GetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\nursesController.cs" />
     <Compile Include="Controllers\patientsController.cs" />
+    <Compile Include="Controllers\receptionsController.cs" />
+    <Compile Include="Controllers\specialitiesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,10 +262,16 @@
       <DependentUpon>201811231007206_ChangedDBTablesNames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\admin.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\appointment.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthDataModel.cs" />
+    <Compile Include="Models\doctor.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -273,7 +287,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\nurse.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\patient.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reception.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\specialities.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserModel.cs" />
@@ -350,11 +373,41 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\admins\Create.cshtml" />
+    <Content Include="Views\admins\Delete.cshtml" />
+    <Content Include="Views\admins\Details.cshtml" />
+    <Content Include="Views\admins\Edit.cshtml" />
+    <Content Include="Views\admins\Index.cshtml" />
+    <Content Include="Views\appointments\Create.cshtml" />
+    <Content Include="Views\appointments\Delete.cshtml" />
+    <Content Include="Views\appointments\Details.cshtml" />
+    <Content Include="Views\appointments\Edit.cshtml" />
+    <Content Include="Views\appointments\Index.cshtml" />
+    <Content Include="Views\doctors\Create.cshtml" />
+    <Content Include="Views\doctors\Delete.cshtml" />
+    <Content Include="Views\doctors\Details.cshtml" />
+    <Content Include="Views\doctors\Edit.cshtml" />
+    <Content Include="Views\doctors\Index.cshtml" />
+    <Content Include="Views\nurses\Create.cshtml" />
+    <Content Include="Views\nurses\Delete.cshtml" />
+    <Content Include="Views\nurses\Details.cshtml" />
+    <Content Include="Views\nurses\Edit.cshtml" />
+    <Content Include="Views\nurses\Index.cshtml" />
     <Content Include="Views\patients\Create.cshtml" />
     <Content Include="Views\patients\Delete.cshtml" />
     <Content Include="Views\patients\Details.cshtml" />
     <Content Include="Views\patients\Edit.cshtml" />
     <Content Include="Views\patients\Index.cshtml" />
+    <Content Include="Views\receptions\Create.cshtml" />
+    <Content Include="Views\receptions\Delete.cshtml" />
+    <Content Include="Views\receptions\Details.cshtml" />
+    <Content Include="Views\receptions\Edit.cshtml" />
+    <Content Include="Views\receptions\Index.cshtml" />
+    <Content Include="Views\specialities\Create.cshtml" />
+    <Content Include="Views\specialities\Delete.cshtml" />
+    <Content Include="Views\specialities\Details.cshtml" />
+    <Content Include="Views\specialities\Edit.cshtml" />
+    <Content Include="Views\specialities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

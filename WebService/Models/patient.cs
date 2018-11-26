@@ -32,8 +32,8 @@ namespace WebService.Models
         public string city { get; set; }
         public string country { get; set; }
         public string datecreated { get; set; }
-        public string userName { get; set; }
-        public string accessType { get; set; }
+        public string username { get; set; }
+        public string accesstype { get; set; }
         public System.Guid id { get; set; }
     }
 }

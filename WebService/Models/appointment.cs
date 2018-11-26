@@ -17,8 +17,8 @@ namespace WebService.Models
         public string date { get; set; }
         public System.Guid id { get; set; }
         public string description { get; set; }
-        public string patientUserName { get; set; }
-        public string doctorUserName { get; set; }
-        public string documentId { get; set; }
+        public string patientusername { get; set; }
+        public string medicusername { get; set; }
+        public string datecreated { get; set; }
     }
 }

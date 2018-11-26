@@ -14,9 +14,10 @@ namespace WebService.Models
         public string LoggedOn { get; set; }
     }
 
-    public class UserName
+    public class CheckUserNameByAccess
     {
-        public string userName { get; set; }
+        public string username { get; set; }
+        public string accesstype { get; set; }
     }
 
     //OUTPUT
@@ -24,9 +25,9 @@ namespace WebService.Models
     {
         public string forename { get; set; }
         public string lastname { get; set; }
-        public string accessType { get; set; }
+        public string accesstype { get; set; }
         public string email { get; set; }
-        public string userName { get; set; }
+        public string username { get; set; }
     }
 
 }
