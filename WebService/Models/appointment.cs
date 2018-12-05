@@ -14,11 +14,12 @@ namespace WebService.Models
     
     public partial class appointment
     {
-        public string date { get; set; }
+        public System.DateTime date { get; set; }
         public System.Guid id { get; set; }
         public string description { get; set; }
         public string patientusername { get; set; }
         public string medicusername { get; set; }
-        public string datecreated { get; set; }
+        public System.DateTime datecreated { get; set; }
+        public string confirmed { get; set; }
     }
 }

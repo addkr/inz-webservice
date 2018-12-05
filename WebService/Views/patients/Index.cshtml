@@ -71,6 +71,12 @@
         <th>
             @Html.DisplayNameFor(model => model.accesstype)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doctorusername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nurseusername)
+        </th>
         <th></th>
     </tr>
 
@@ -135,6 +141,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.accesstype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.doctorusername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nurseusername)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

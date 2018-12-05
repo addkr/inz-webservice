@@ -12,13 +12,11 @@ namespace WebService.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class admin
+    public partial class freeterms
     {
-        public string username { get; set; }
-        public string accesstype { get; set; }
-        public System.DateTime datecreated { get; set; }
         public System.Guid id { get; set; }
-        public string email { get; set; }
-        public string phoneno { get; set; }
+        public string doctorusername { get; set; }
+        public System.DateTime date { get; set; }
+        public string doctorspeciality { get; set; }
     }
 }

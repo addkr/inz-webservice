@@ -12,9 +12,7 @@ namespace WebService.Controllers
 {
     public class appointmentsController : Controller
     {
-        private healthCenterDBEntities1 db = new healthCenterDBEntities1();
-
-       
+        private healthCenterDBEntities db = new healthCenterDBEntities();
 
         // GET: appointments
         public ActionResult Index()
@@ -47,7 +45,7 @@ namespace WebService.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "date,id,description,patientusername,medicusername,datecreated")] appointment appointment)
+        public ActionResult Create([Bind(Include = "date,id,description,patientusername,medicusername,datecreated,confirmed")] appointment appointment)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +77,7 @@ namespace WebService.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "date,id,description,patientusername,medicusername,datecreated")] appointment appointment)
+        public ActionResult Edit([Bind(Include = "date,id,description,patientusername,medicusername,datecreated,confirmed")] appointment appointment)
         {
             if (ModelState.IsValid)
             {

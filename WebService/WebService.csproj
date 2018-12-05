@@ -243,6 +243,7 @@
     <Compile Include="Controllers\adminsController.cs" />
     <Compile Include="Controllers\appointmentsController.cs" />
     <Compile Include="Controllers\doctorsController.cs" />
+    <Compile Include="Controllers\freetermsController.cs" />
     <Compile Include="Controllers\GetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\nursesController.cs" />
@@ -270,6 +271,9 @@
     </Compile>
     <Compile Include="Models\AuthDataModel.cs" />
     <Compile Include="Models\doctor.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\freeterms.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -388,6 +392,11 @@
     <Content Include="Views\doctors\Details.cshtml" />
     <Content Include="Views\doctors\Edit.cshtml" />
     <Content Include="Views\doctors\Index.cshtml" />
+    <Content Include="Views\freeterms\Create.cshtml" />
+    <Content Include="Views\freeterms\Delete.cshtml" />
+    <Content Include="Views\freeterms\Details.cshtml" />
+    <Content Include="Views\freeterms\Edit.cshtml" />
+    <Content Include="Views\freeterms\Index.cshtml" />
     <Content Include="Views\nurses\Create.cshtml" />
     <Content Include="Views\nurses\Delete.cshtml" />
     <Content Include="Views\nurses\Details.cshtml" />

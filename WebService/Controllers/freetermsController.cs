@@ -10,105 +10,105 @@ using WebService.Models;
 
 namespace WebService.Controllers
 {
-    public class patientsController : Controller
+    public class freetermsController : Controller
     {
         private healthCenterDBEntities db = new healthCenterDBEntities();
 
-        // GET: patients
+        // GET: freeterms
         public ActionResult Index()
         {
-            return View(db.patient.ToList());
+            return View(db.freeterms.ToList());
         }
 
-        // GET: patients/Details/5
+        // GET: freeterms/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            patient patient = db.patient.Find(id);
-            if (patient == null)
+            freeterms freeterms = db.freeterms.Find(id);
+            if (freeterms == null)
             {
                 return HttpNotFound();
             }
-            return View(patient);
+            return View(freeterms);
         }
 
-        // GET: patients/Create
+        // GET: freeterms/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: patients/Create
+        // POST: freeterms/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "forename,secondname,lastname,familyname,sex,citizenship,education,pesel,dateofbirth,insuranceno,email,phoneno,street,housenumber,local,city,country,datecreated,username,accesstype,id,doctorusername,nurseusername")] patient patient)
+        public ActionResult Create([Bind(Include = "id,doctorusername,date,doctorspeciality")] freeterms freeterms)
         {
             if (ModelState.IsValid)
             {
-                patient.id = Guid.NewGuid();
-                db.patient.Add(patient);
+                freeterms.id = Guid.NewGuid();
+                db.freeterms.Add(freeterms);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(patient);
+            return View(freeterms);
         }
 
-        // GET: patients/Edit/5
+        // GET: freeterms/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            patient patient = db.patient.Find(id);
-            if (patient == null)
+            freeterms freeterms = db.freeterms.Find(id);
+            if (freeterms == null)
             {
                 return HttpNotFound();
             }
-            return View(patient);
+            return View(freeterms);
         }
 
-        // POST: patients/Edit/5
+        // POST: freeterms/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "forename,secondname,lastname,familyname,sex,citizenship,education,pesel,dateofbirth,insuranceno,email,phoneno,street,housenumber,local,city,country,datecreated,username,accesstype,id,doctorusername,nurseusername")] patient patient)
+        public ActionResult Edit([Bind(Include = "id,doctorusername,date,doctorspeciality")] freeterms freeterms)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patient).State = EntityState.Modified;
+                db.Entry(freeterms).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(patient);
+            return View(freeterms);
         }
 
-        // GET: patients/Delete/5
+        // GET: freeterms/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            patient patient = db.patient.Find(id);
-            if (patient == null)
+            freeterms freeterms = db.freeterms.Find(id);
+            if (freeterms == null)
             {
                 return HttpNotFound();
             }
-            return View(patient);
+            return View(freeterms);
         }
 
-        // POST: patients/Delete/5
+        // POST: freeterms/Delete/5
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            patient patient = db.patient.Find(id);
-            db.patient.Remove(patient);
+            freeterms freeterms = db.freeterms.Find(id);
+            db.freeterms.Remove(freeterms);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -13,10 +13,10 @@ namespace WebService.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class healthCenterDBEntities1 : DbContext
+    public partial class healthCenterDBEntities : DbContext
     {
-        public healthCenterDBEntities1()
-            : base("name=healthCenterDBEntities1")
+        public healthCenterDBEntities()
+            : base("name=healthCenterDBEntities")
         {
         }
     
@@ -28,6 +28,7 @@ namespace WebService.Models
         public virtual DbSet<admin> admin { get; set; }
         public virtual DbSet<appointment> appointment { get; set; }
         public virtual DbSet<doctor> doctor { get; set; }
+        public virtual DbSet<freeterms> freeterms { get; set; }
         public virtual DbSet<nurse> nurse { get; set; }
         public virtual DbSet<patient> patient { get; set; }
         public virtual DbSet<reception> reception { get; set; }

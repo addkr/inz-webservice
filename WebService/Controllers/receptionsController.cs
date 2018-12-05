@@ -12,8 +12,7 @@ namespace WebService.Controllers
 {
     public class receptionsController : Controller
     {
-        private healthCenterDBEntities1 db = new healthCenterDBEntities1();
-
+        private healthCenterDBEntities db = new healthCenterDBEntities();
 
         // GET: receptions
         public ActionResult Index()

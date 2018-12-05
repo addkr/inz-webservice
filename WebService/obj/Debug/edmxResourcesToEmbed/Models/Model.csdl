@@ -6,21 +6,22 @@
     </Key>
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="accesstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="datecreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="datecreated" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="id" Type="Guid" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="id" Type="Guid" Nullable="false" />
     <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="patientusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="medicusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="datecreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="datecreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="confirmed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="doctor">
     <Key>
@@ -31,9 +32,18 @@
     <Property Name="speciality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="id" Type="Guid" Nullable="false" />
-    <Property Name="accesstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accesstype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="freeterms">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="doctorusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="doctorspeciality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="nurse">
     <Key>
@@ -44,8 +54,8 @@
     <Property Name="speciality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="id" Type="Guid" Nullable="false" />
-    <Property Name="accesstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accesstype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="patient">
@@ -60,7 +70,7 @@
     <Property Name="citizenship" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="education" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="pesel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="dateofbirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateofbirth" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="insuranceno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="phoneno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -69,10 +79,12 @@
     <Property Name="local" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="datecreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="datecreated" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="accesstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accesstype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="doctorusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nurseusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="reception">
     <Key>
@@ -83,8 +95,8 @@
     <Property Name="forename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="accesstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accesstype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="specialities">
     <Key>
@@ -93,10 +105,11 @@
     <Property Name="id" Type="Guid" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="healthCenterDBEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="healthCenterDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="admin" EntityType="Self.admin" />
     <EntitySet Name="appointment" EntityType="Self.appointment" />
     <EntitySet Name="doctor" EntityType="Self.doctor" />
+    <EntitySet Name="freeterms" EntityType="Self.freeterms" />
     <EntitySet Name="nurse" EntityType="Self.nurse" />
     <EntitySet Name="patient" EntityType="Self.patient" />
     <EntitySet Name="reception" EntityType="Self.reception" />

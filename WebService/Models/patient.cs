@@ -22,7 +22,7 @@ namespace WebService.Models
         public string citizenship { get; set; }
         public string education { get; set; }
         public string pesel { get; set; }
-        public string dateofbirth { get; set; }
+        public System.DateTime dateofbirth { get; set; }
         public string insuranceno { get; set; }
         public string email { get; set; }
         public string phoneno { get; set; }
@@ -31,9 +31,11 @@ namespace WebService.Models
         public string local { get; set; }
         public string city { get; set; }
         public string country { get; set; }
-        public string datecreated { get; set; }
+        public System.DateTime datecreated { get; set; }
         public string username { get; set; }
         public string accesstype { get; set; }
         public System.Guid id { get; set; }
+        public string doctorusername { get; set; }
+        public string nurseusername { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="healthCenterDBModelStoreContainer" CdmEntityContainer="healthCenterDBEntities1">
+  <EntityContainerMapping StorageEntityContainer="healthCenterDBModelStoreContainer" CdmEntityContainer="healthCenterDBEntities">
     <EntitySetMapping Name="admin">
       <EntityTypeMapping TypeName="healthCenterDBModel.admin">
         <MappingFragment StoreEntitySet="admin">
@@ -22,6 +22,7 @@
           <ScalarProperty Name="patientusername" ColumnName="patientusername" />
           <ScalarProperty Name="medicusername" ColumnName="medicusername" />
           <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+          <ScalarProperty Name="confirmed" ColumnName="confirmed" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,6 +37,16 @@
           <ScalarProperty Name="accesstype" ColumnName="accesstype" />
           <ScalarProperty Name="phoneno" ColumnName="phoneno" />
           <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="freeterms">
+      <EntityTypeMapping TypeName="healthCenterDBModel.freeterms">
+        <MappingFragment StoreEntitySet="freeterms">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="doctorusername" ColumnName="doctorusername" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="doctorspeciality" ColumnName="doctorspeciality" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -77,6 +88,8 @@
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="accesstype" ColumnName="accesstype" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="doctorusername" ColumnName="doctorusername" />
+          <ScalarProperty Name="nurseusername" ColumnName="nurseusername" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

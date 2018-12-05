@@ -6,21 +6,22 @@
     </Key>
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="accesstype" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="datecreated" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="datecreated" Type="smalldatetime" Nullable="false" />
     <Property Name="id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneno" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="date" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="smalldatetime" Nullable="false" />
     <Property Name="id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="description" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="patientusername" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="medicusername" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="datecreated" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="datecreated" Type="smalldatetime" Nullable="false" />
+    <Property Name="confirmed" Type="nvarchar" MaxLength="5" />
   </EntityType>
   <EntityType Name="doctor">
     <Key>
@@ -31,9 +32,18 @@
     <Property Name="speciality" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="id" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="accesstype" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="accesstype" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="phoneno" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="freeterms">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="doctorusername" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="smalldatetime" Nullable="false" />
+    <Property Name="doctorspeciality" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="nurse">
     <Key>
@@ -44,8 +54,8 @@
     <Property Name="speciality" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="id" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="accesstype" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="accesstype" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="phoneno" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="patient">
@@ -60,7 +70,7 @@
     <Property Name="citizenship" Type="varchar" MaxLength="150" />
     <Property Name="education" Type="varchar" MaxLength="50" />
     <Property Name="pesel" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="dateofbirth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateofbirth" Type="date" Nullable="false" />
     <Property Name="insuranceno" Type="nvarchar" MaxLength="20" />
     <Property Name="email" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="phoneno" Type="nvarchar" MaxLength="20" />
@@ -69,10 +79,12 @@
     <Property Name="local" Type="nvarchar" MaxLength="50" />
     <Property Name="city" Type="nvarchar" MaxLength="50" />
     <Property Name="country" Type="nvarchar" MaxLength="50" />
-    <Property Name="datecreated" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="datecreated" Type="smalldatetime" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="accesstype" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="accesstype" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="doctorusername" Type="nvarchar" MaxLength="50" />
+    <Property Name="nurseusername" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="reception">
     <Key>
@@ -83,8 +95,8 @@
     <Property Name="forename" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="accesstype" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="accesstype" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="phoneno" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="specialities">
     <Key>
@@ -97,6 +109,7 @@
     <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="freeterms" EntityType="Self.freeterms" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nurse" EntityType="Self.nurse" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reception" EntityType="Self.reception" Schema="dbo" store:Type="Tables" />
